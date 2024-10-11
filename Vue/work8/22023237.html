@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@3.0.11"></script>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>成绩</th>
+            </tr>
+            <tr v-for="value in student">
+                <td>{{value.sid}}</td>
+                <td>{{value.name}}</td>
+                <td>{{value.score}}</td>
+            </tr>
+    </div>
+
+    <script>
+        console.log("Vue", Vue);
+
+        let app = Vue.createApp({
+            data() {
+                return {
+                    student: [{
+                        sid: 1,
+                        name: "张三",
+                        score: 99
+                    }, {
+                        sid: 2,
+                        name: "李四",
+                        score: 95
+                    }, {
+                        sid: 3,
+                        name: "王五",
+                        score: 92
+                    }, {
+                        sid: 4,
+                        name: "赵六",
+                        score: 90
+                    }, {
+                        sid: 5,
+                        name: "孙七",
+                        score: 88
+                    }, {
+                        sid: 6,
+                        name: "周八",
+                        score: 85
+                    }, {
+                        sid: 7,
+                        name: "吴九",
+                        score: 82
+                    }, {
+                        sid: 8,
+                        name: "郑十",
+                        score: 79
+                    }, {
+                        sid: 9,
+                        name: "陈十一",
+                        score: 75
+                    }, {
+                        sid: 10,
+                        name: "刘十二",
+                        score: 72
+                    }]
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+
+</html>

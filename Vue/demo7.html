@@ -1,0 +1,55 @@
+<body></body>
+<div id="mydiv">
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Num</th>
+            <th>Sum</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Phone</td>
+            <td>${{price}}</td>
+            <td>
+                <button @click="sub">-</button>
+                {{num}}
+                <button @click="add">+</button>
+            </td>
+            <td>{{sum}}</td>
+        </tr>
+    </table>
+</div>
+
+<script src="https://unpkg.com/vue@3.0.11"></script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                price: 199,
+                num: 1
+            }
+        },
+        computed: {
+            sum() {
+                return "$" + this.num * this.price;
+            }
+        },
+        methods: {
+            sub() {
+                this.num--;
+            },
+            add() {
+                this.num++;
+            }
+        },
+        watch: {
+            num(newVal, oldVal) {
+                // console.log(newVal, oldVal);
+                this.num = newVal <= 0 ? oldVal : newVal
+            }
+        }
+    }).mount("#mydiv")
+</script>
+</body>

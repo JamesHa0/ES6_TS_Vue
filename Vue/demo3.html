@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@3.0.11"></script>
+</head>
+
+<body>
+    <div id="test">
+        <p>{{num}}</p>
+
+        <button @click="add1_btn">+1</button><br>
+        <input type="text" v-model="n"><br>
+        <button @click="add_btn(n)">Add</button><br>
+        <button @click="sub1_btn">-1</button><br>
+        <input type="text" v-model="m"><br>
+        <button @click="sub_btn(m)">Sub</button>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    num: 1
+                }
+            },
+            methods: {
+                add1_btn() {
+                    this.num++;
+                },
+                add_btn(n) {
+                    this.num += Number(n);
+                },
+                sub1_btn() {
+                    this.num--;
+                },
+                sub_btn(m) {
+                    this.num -= Number(m);
+                },
+            }
+        }).mount("#test")
+    </script>
+</body>
+
+</html>

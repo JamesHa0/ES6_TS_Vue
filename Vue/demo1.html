@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@3.0.11"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{test}}</p>
+        <!-- v-model属性会绑定msg数据 -->
+        <input type="type" v-model="test">
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    test: '00:00:00'
+                }
+            },
+            mounted() {
+                setInterval(() => {
+                    let d = new Date();
+                    let hour;
+                    let minute;
+                    let second;
+                    if (d.getHours() < 10) {
+                        hour = "0" + d.getHours();
+                    } else {
+                        hour = d.getHours();
+                    }
+                    if (d.getMinutes() < 10) {
+                        minute = "0" + d.getMinutes();
+                    } else {
+                        minute = d.getMinutes();
+                    }
+                    if (d.getSeconds() < 10) {
+                        second = "0" + d.getSeconds();
+                    } else {
+                        second = d.getSeconds();
+                    }
+                    this.test = hour + ":" + minute + ":" + second;
+                }, 1000);
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>

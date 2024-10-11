@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@3.0.11"></script>
+    <style>
+        .first {
+            color: blue;
+        }
+
+        .second {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-html="msg" :id="pid" :class="myclass"></div>
+        <div v-text="msg"></div>
+    </div>
+    <div id="ddd">
+        <div v-html="test" :style="{color:color1,fontSize:fs1,border:bd1,backgroundColor:bc}"></div>
+    </div>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    msg: "<h3>hello</h3>",
+                    pid: '123',
+                    myclass: ["first", "second"]
+                }
+            }
+        }).mount("#app");
+        Vue.createApp({
+            data() {
+                return {
+                    test: "hallo 我的!",
+                    color1: "red",
+                    fs1: "20px",
+                    bd1: "1px solid black",
+                    bc: "yellow"
+                }
+            }
+        }).mount("#ddd");
+    </script>
+</body>
+
+</html>

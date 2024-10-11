@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="demo.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="title"><span>My To Do List</span></div>
+        <div class="search">
+            <form action="">
+                <input type="text" placeholder="Title..." id="title" />
+                <button type="button" id="btn_add">Add</button>
+            </form>
+        </div>
+    </div>
+    <div class="navi">
+        <div class="status">
+            <input type="radio" id="option1" name="group" checked>
+            <p>全部</p>
+        </div>
+        <div class="status">
+            <input type="radio" id="option2" name="group">
+            <p>Waiting</p>
+        </div>
+        <div class="status">
+            <input type="radio" id="option3" name="group">
+            <p>Doing</p>
+        </div>
+        <div class="status">
+            <input type="radio" id="option4" name="group">
+            <p>Finished</p>
+        </div>
+    </div>
+    <div class="list">
+        <table id="list">
+            <tr id="task" class="Waiting">
+                <td>学习打代码</td>
+                <td><input type="button" value="×" onclick="deleteRow(this)" id="btn_delete"></td>
+            </tr>
+            <tr id="task" class="Waiting">
+                <td>出门打车</td>
+                <td><input type="button" value="×" onclick="deleteRow(this)"></td>
+            </tr>
+            <tr id="task" class="Doing">
+                <td>饿了打饭</td>
+                <td><input type="button" value="×" onclick="deleteRow(this)"></td>
+            </tr>
+            <tr id="task" class="Finished">
+                <td>困了打盹</td>
+                <td><input type="button" value="×" onclick="deleteRow(this)"></td>
+            </tr>
+            <tr id="task" class="Finished">
+                <td>文件打印</td>
+                <td><input type="button" value="×" onclick="deleteRow(this)"></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
